@@ -1,10 +1,45 @@
 #include <iostream>
+#include <fstream>
+
+#include "graph.hpp"
 
 using namespace std;
 
 int main(int argc, char* argv[]){
 
-  cout << "CSC-360 Project 06" << endl;
+  //handle command line arguments
+  if(argc != 2){
+    cout << "Incorrect number of arguments. This program accepts only one argument." << endl;
+    return 0;
+  }
+
+  //open file
+  string filename = argv[1];
+  ifstream file(filename);
+
+  //init variables for graph data
+  Graph network;
+
+  string nodeA;
+  string nodeB;
+  int weight;
+
+  int i = 0;
+  //init graph
+  while(file >> nodeA){
+    file >> nodeB;
+    file >> weight;
+    edge newEdge(nodeA, nodeB, weight);
+
+    network._edges.push_back(newEdge);
+
+    cout << network._edges[i]._nodes.first << endl;
+    i++;
+  }
+
+
+  //minimum spanning tree algorithm
+
 
   return 0;
 }
