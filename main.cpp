@@ -33,7 +33,7 @@ int main(int argc, char* argv[]){
 
     network._edges.push_back(newEdge);
 
-    cout << network._edges[i]._nodes.first << endl;
+    cout << network._edges[i]._first << " " << network._edges[i]._second << " " << network._edges[i]._weight << endl;
     i++;
   }
 

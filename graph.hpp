@@ -1,13 +1,13 @@
 #include <iostream>
 #include <vector>
-#include <utility>
 
 class edge{
 public:
-  std::pair<std::string, std::string> _nodes;
+  std::string _first;
+  std::string _second;
   int _weight;
 
-  edge(std::string a, std::string b, int weight): _weight(weight){ _nodes.first = a; _nodes.second = b; };
+  edge(std::string first, std::string second, int weight): _first(first), _second(second), _weight(weight) {};
 
 };
 
